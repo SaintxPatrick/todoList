@@ -1,12 +1,12 @@
-window === null || window === void 0 ? void 0 : window.addEventListener('load', loaded); /** loaded here is the name of the function the alternative would be window.addEventListener('load', () => {}); */
+window.addEventListener('load', loaded); /** loaded here is the name of the function the alternative would be window.addEventListener('load', () => {}); */
 function loaded() {
     var form = document.querySelector("#new-task-form"); /** ! at end expresses it will not be null */
-    var input = document.getElementById("new-task-input");
+    var input = document.getElementById("new-task-input"); /*I realize that TypeScript is smart enough to recognize what type the variable would become, just noting them
+                                                                          *so I can look back and realize certain types. */
     var list_el = document.querySelector("#tasks");
-    form === null || form === void 0 ? void 0 : form.addEventListener('submit', function (event) {
+    form.addEventListener('submit', function (event) {
         event.preventDefault();
         var task = input.value;
-        console.log(task);
         var task_el = document.createElement("div");
         task_el.classList.add("task");
         var task_content_el = document.createElement("div");
