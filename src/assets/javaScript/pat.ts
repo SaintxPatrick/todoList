@@ -1,9 +1,19 @@
-window.addEventListener('load', loaded); /** loaded here is the name of the function the alternative would be window.addEventListener('load', () => {}); */
+/** Creator: Patrick Williams
+ * Purpose: Simply being used as a notebook as well as practice to convert JavaScript to TypeScript.
+ * also allowed me to develop a simple web applcation using JavaScript.
+ * Date: 10/28/22 */
+
+/** loaded here is the name of the function, basically when the page is loaded it runs the loaded function. The alternative
+ * and cleaner method would be window.addEventListener('load', () => {});  */
+window.addEventListener('load', loaded); 
 
 function loaded() {
-  let form: HTMLElement = document.querySelector("#new-task-form")!; /** ! at end expresses it will not be null */
-  let input: HTMLElement = document.getElementById("new-task-input")!; /*I realize that TypeScript is smart enough to recognize what type the variable would become, just noting them
-                                                                        *so I can look back and realize certain types. */
+  /** ! at end expresses it will not be null */
+  let form: HTMLElement = document.querySelector("#new-task-form")!;
+
+  /*I realize that TypeScript is smart enough to recognize what type the variable would become, just noting them
+  *so I can look back and realize certain types. */
+  let input: HTMLElement = document.getElementById("new-task-input")!; 
   let list_el: HTMLElement = document.querySelector("#tasks")!;
 
   form.addEventListener('submit', (event: any): void => {
