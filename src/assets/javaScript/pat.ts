@@ -1,12 +1,14 @@
-window.addEventListener('load', () => {
-  const form = document.querySelector("#new-task-form");
-  const input ?= document.querySelector("#new-task-input");
-  const list_el = document.querySelector("#tasks");
+window?.addEventListener('load', loaded); /** loaded here is the name of the function the alternative would be window.addEventListener('load', () => {}); */
 
-  form?.addEventListener('submit', (event) => {
+function loaded() {
+  const form: HTMLElement = document.querySelector("#new-task-form")!; /** ! at end expresses it will not be null */
+  let input: HTMLElement = document.getElementById("new-task-input")!;
+  const list_el: HTMLElement = document.querySelector("#tasks")!;
+
+  form?.addEventListener('submit', (event: any) => {
     event.preventDefault();
-    let task: string = input.value;
-
+    let task: string = (input as HTMLInputElement).value;
+    console.log(task);
     let task_el = document.createElement("div");
     task_el.classList.add("task");
 
@@ -56,4 +58,5 @@ window.addEventListener('load', () => {
       list_el.removeChild(task_el);
     })
   })
-});
+}
+
