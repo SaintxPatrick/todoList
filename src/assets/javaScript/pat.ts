@@ -66,7 +66,6 @@ function loaded() {
 
     task_delete_el.addEventListener('click', () : void =>  {
       list_el.removeChild(task_el);
-      console.log("Is typescript working?");
     })
   })
 }
