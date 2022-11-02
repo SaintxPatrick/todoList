@@ -5,7 +5,7 @@
 
 /** loaded here is the name of the function, basically when the page is loaded it runs the loaded function. The alternative
  * and cleaner method would be window.addEventListener('load', () => {});  */
-window.addEventListener('load', loaded); 
+window.addEventListener('load', loaded);
 
 function loaded() {
   /** ! at end expresses it will not be null */
@@ -13,12 +13,12 @@ function loaded() {
 
   /*I realize that TypeScript is smart enough to recognize what type the variable would become, just noting them
   *so I can look back and realize certain types. */
-  let input: HTMLElement = document.getElementById("new-task-input")!; 
+  let input: HTMLElement = document.getElementById("new-task-input")!;
   let list_el: HTMLElement = document.querySelector("#tasks")!;
 
   form.addEventListener('submit', (event: any): void => {
     event.preventDefault();
-    let task: string = (input as HTMLInputElement).value;    
+    let task: string = (input as HTMLInputElement).value;
     let task_el: HTMLDivElement = document.createElement("div");
     task_el.classList.add("task");
 
@@ -66,6 +66,7 @@ function loaded() {
 
     task_delete_el.addEventListener('click', () : void =>  {
       list_el.removeChild(task_el);
+      console.log("Is typescript working?");
     })
   })
 }
